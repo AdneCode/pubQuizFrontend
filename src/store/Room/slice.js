@@ -14,11 +14,9 @@ export const roomSlice = createSlice({
   reducers: {
     setQuestions: (state, action) => {
       state.questions = action.payload;
-      console.log("question state", state.questions);
     },
     setCategories: (state, action) => {
       state.categories = action.payload;
-      console.log("category state", state.categories);
     },
     setPlayers: (state, action) => {
       state.players = action.payload;
