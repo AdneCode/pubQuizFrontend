@@ -26,14 +26,21 @@ export const Hostpage = () => {
         //emit to create a new room
 
         console.log(response.data);
-        const data = {};
-        // socket.emit('createRoom', data);
+        const data = { name: hostName, questions: response.data };
+        socket.emit('createRoom', data);
     };
 
     return (
         <div>
             <h1>Hostpage</h1>
             <Form onSubmit={submitGameSettings}>
+                {/* Host name section (guys I don't know wtf the Form.Label thing is but Form.Input was not a thing, im so sorry)*/}
+                <Form.Label>Name</Form.Label>
+                <input
+                    value={hostName}
+                    onChange={(e) => setHostName(e.target.value)}
+                />
+                {/* End host name section */}
                 <Form.Label>select category</Form.Label>
                 <Form.Select
                     aria-label="Default select example"
