@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getQuestions } from "../../store/Room/thunks";
+
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from "react-router-dom";
 
-export const Hostpage = () => {
 
+export const Hostpage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -14,16 +15,21 @@ export const Hostpage = () => {
 
   const submitGameSettings = (e) => {
     e.preventDefault();
+
     dispatch(getQuestions(selectedNumQuestions, selectedCategory, selectedDifficulty));
     navigate("/loading");
+
   };
 
   return (
     <div>
       <h1>Hostpage</h1>
-      <Form onSubmit={ submitGameSettings }>
+      <Form onSubmit={submitGameSettings}>
         <Form.Label>select category</Form.Label>
-        <Form.Select aria-label="Default select example" onChange={ (e) => setSelectedCategory(e.target.value) }>
+        <Form.Select
+          aria-label="Default select example"
+          onChange={(e) => setSelectedCategory(e.target.value)}
+        >
           <option>Open this select menu</option>
           <option value="arts_and_literature">Arts & Literature</option>
           <option value="film_and_tv">Film & TV</option>
@@ -38,7 +44,10 @@ export const Hostpage = () => {
         </Form.Select>
         <br />
         <Form.Label>select difficulty</Form.Label>
-        <Form.Select onChange={ (e) => setSelectedDifficulty(e.target.value) } aria-label="Default select example">
+        <Form.Select
+          onChange={(e) => setSelectedDifficulty(e.target.value)}
+          aria-label="Default select example"
+        >
           <option>Open this select menu</option>
           <option value="easy">easy</option>
           <option value="medium">medium</option>
@@ -46,7 +55,10 @@ export const Hostpage = () => {
         </Form.Select>
         <br />
         <Form.Label>select amount of questions</Form.Label>
-        <Form.Select onChange={ (e) => setSelectedNumQuestion(e.target.value) } aria-label="Default select example">
+        <Form.Select
+          onChange={(e) => setSelectedNumQuestion(e.target.value)}
+          aria-label="Default select example"
+        >
           <option>Open this select menu</option>
           <option value="5">5</option>
           <option value="10">10</option>

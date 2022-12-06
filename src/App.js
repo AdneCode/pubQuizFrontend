@@ -1,10 +1,15 @@
 import { Route, Routes } from "react-router-dom";
+
 import { Welcomepage, Homepage, Hostpage, Quizpage, Scorepage, LoadingPage, QuestionPage } from "./pages";
+
+import { AppNavbar } from "./components";
+
 
 import "./App.scss";
 
 function App() {
   return (
+
     <Routes>
       <Route path="/" element={ <Welcomepage /> } />
       <Route path="/start" element={ <Homepage /> } />
@@ -14,8 +19,8 @@ function App() {
       <Route path="/loading" element={ <LoadingPage /> } />
       <Route path="/question" element={ <QuestionPage /> } />
     </Routes>
-  );
 
+  );
 }
 
 export default App;
