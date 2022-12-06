@@ -13,7 +13,7 @@ export const Homepage = () => {
         e.preventDefault();
         const data = { code, name };
         //Connect to socket.io
-        //Socket.emit is sending a message to the server. If socket.emit is used in the backend, this means that it is sending something from the server to the client.
+        //Socket.emit is sending a message to the server. If socket.emit is used in the backend, the server is sending something to the client.
         //We declare 'joinRoom' to the socket.emit method. In the backend, socket.on('joinRoom') is declared, the string needs to be identical
         //to the string declared in the client. The second (optional) parameter (data) is used to declare what information we are going to send. In our case,
         //we send the data that was declared in the above. In the server, the second parameter will refer to that same piece of information, so the server

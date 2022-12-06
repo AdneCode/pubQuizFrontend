@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import { getQuestions } from '../../store/Room/thunks';
 import Form from 'react-bootstrap/Form';
 import { SocketContext } from '../../socket';
@@ -25,8 +25,6 @@ export const Hostpage = () => {
 
         //for more guidance on socket.emit, see the homepage.
         //emit to create a new room
-
-        console.log(response.data);
         const data = { name: hostName, questions: response.data };
         socket.emit('createRoom', data);
     };

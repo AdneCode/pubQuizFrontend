@@ -1,16 +1,17 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectQuestions } from '../../store/Room/selectors';
-import { useSelector } from 'react-redux';
+import { useContext } from 'react';
+import { SocketContext } from '../../socket';
+import { selectRoom } from '../../store/Room/selectors';
 
 export const Quizpage = () => {
     const dispatch = useDispatch();
-
-    const questions = useSelector(selectQuestions);
-    console.log(questions);
+    const socket = useContext(SocketContext);
+    const room = useSelector(selectRoom);
+    console.log(room);
     return (
         <div>
             <h1>Quizpage</h1>
         </div>
     );
-
 };
