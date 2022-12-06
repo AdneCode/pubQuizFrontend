@@ -10,5 +10,5 @@ export const getQuestions =
 
 export const getCategories = () => async (dispatch, getState) => {
   const response = await axios.get(`https://the-trivia-api.com/api/categories`);
-  console.log(response);
+  console.log(response.data);
 };
