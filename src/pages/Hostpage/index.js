@@ -2,10 +2,12 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getQuestions } from "../../store/Room/thunks";
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from "react-router-dom";
 
 export const Hostpage = () => {
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedDifficulty, setSelectedDifficulty] = useState("");
   const [selectedNumQuestions, setSelectedNumQuestion] = useState("");
@@ -13,6 +15,7 @@ export const Hostpage = () => {
   const submitGameSettings = (e) => {
     e.preventDefault();
     dispatch(getQuestions(selectedNumQuestions, selectedCategory, selectedDifficulty));
+    navigate("/loading");
   };
 
   return (
@@ -51,7 +54,7 @@ export const Hostpage = () => {
           <option value="20">20</option>
           <option value="25">25</option>
         </Form.Select>
-        <button type="submit">Start Game</button>
+        <button type="submit" >Start Game</button>
       </Form>
     </div>
   );
