@@ -1,4 +1,5 @@
 import logo from "./logo.svg";
+
 import { Route, Routes } from "react-router-dom";
 import { Welcomepage, Homepage, Hostpage, Quizpage, Scorepage } from "./pages";
 
@@ -14,6 +15,7 @@ function App() {
       <Route path="/score" element={<Scorepage />} />
     </Routes>
   );
+
 }
 
 export default App;
