@@ -1,3 +1,4 @@
+
 import { useDispatch } from "react-redux";
 import { selectQuestions } from "../../store/Room/selectors";
 import { useSelector } from "react-redux";
@@ -11,6 +12,7 @@ export const Quizpage = () => {
   return (
     <div>
       <h1>Quizpage</h1>
+
     </div>
   );
 };
