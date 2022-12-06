@@ -7,7 +7,7 @@ export const getQuestions =
     const response = await axios.get(
       `https://the-trivia-api.com/api/questions?categories=${categories}&limit=${limit}&region=NL&difficulty=${diff}`
     );
-    dispatch(setQuestions(response));
+    dispatch(setQuestions(response.data));
   };
 
 export const getCategories = () => async (dispatch, getState) => {
