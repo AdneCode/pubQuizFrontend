@@ -1,5 +1,6 @@
 import { useState, useContext } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 import { getQuestions } from '../../store/Room/thunks';
 import Form from 'react-bootstrap/Form';
 import { SocketContext } from '../../socket';
@@ -86,7 +87,7 @@ export const Hostpage = () => {
                     <option value="20">20</option>
                     <option value="25">25</option>
                 </Form.Select>
-                <button type="submit">Start Game</button>
+                <button type="submit">Create Game</button>
             </Form>
         </div>
     );

@@ -1,6 +1,6 @@
-import logo from './logo.svg';
+
 import { Route, Routes } from 'react-router-dom';
-import { Welcomepage, Homepage, Hostpage, Quizpage, Scorepage } from './pages';
+import { Welcomepage, Homepage, Hostpage, Quizpage, Scorepage, LoadingPage, QuestionPage } from "./pages";
 import { AppNavbar } from './components';
 
 import './App.scss';
@@ -23,12 +23,14 @@ function App() {
         <div>
             <AppNavbar />
             <Routes>
-                <Route path="/" element={<Welcomepage />} />
-                <Route path="/start" element={<Homepage />} />
-                <Route path="/host" element={<Hostpage />} />
-                <Route path="/quiz" element={<Quizpage />} />
-                <Route path="/score" element={<Scorepage />} />
-            </Routes>
+      <Route path="/" element={ <Welcomepage /> } />
+      <Route path="/start" element={ <Homepage /> } />
+      <Route path="/host" element={ <Hostpage /> } />
+      <Route path="/quiz" element={ <Quizpage /> } />
+      <Route path="/score" element={ <Scorepage /> } />
+      <Route path="/loading" element={ <LoadingPage /> } />
+      <Route path="/question" element={ <QuestionPage /> } />
+    </Routes>
         </div>
     );
 }

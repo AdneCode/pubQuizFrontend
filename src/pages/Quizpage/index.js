@@ -7,10 +7,10 @@ export const Quizpage = () => {
 
     const questions = useSelector(selectQuestions);
     console.log(questions);
-
     return (
         <div>
             <h1>Quizpage</h1>
         </div>
     );
+
 };
