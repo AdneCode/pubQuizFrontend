@@ -5,24 +5,27 @@ import { SocketContext } from '../../socket';
 import { selectRoom } from '../../store/Room/selectors';
 
 export const Quizpage = () => {
-  const dispatch = useDispatch();
-  const socket = useContext(SocketContext);
-  const room = useSelector(selectRoom);
-  console.log(room);
+    const dispatch = useDispatch();
+    const socket = useContext(SocketContext);
+    const room = useSelector(selectRoom);
+    console.log(room);
 
-  const handleChosenAnswer = (choice) => {
-    socket.emit("lockAnswer", choice);
-  };
+    const handleChosenAnswer = (choice) => {
+        const data = { answer: choice, roomId: room.roomId };
+        socket.emit('lockAnswer', data);
+    };
 
-  return (
-    <div>
-      <h1>Quizpage</h1>
-      <h1>{ room.currentQuestion.category }</h1>
-      { room.currentQuestion.choices.map((choice, id) => {
-        return (
-          <button onClick={ handleChosenAnswer(choice) } key={ id }>{ choice }</button>
-        );
-      }) }
-    </div>
-  );
+    return (
+        <div>
+            <h1>Quizpage</h1>
+            <h1>{room.currentQuestion.category}</h1>
+            {room.currentQuestion.choices.map((choice, id) => {
+                return (
+                    <button onClick={() => handleChosenAnswer(choice)} key={id}>
+                        {choice}
+                    </button>
+                );
+            })}
+        </div>
+    );
 };
