@@ -7,7 +7,7 @@ import {
     Scorepage,
     LoadingPage,
     QuestionPage,
-    FinalPage,
+    FinalScorePage,
 } from './pages';
 import { AppNavbar } from './components';
 
@@ -58,7 +58,7 @@ function App() {
                 <Route path="/score" element={<Scorepage />} />
                 <Route path="/loading" element={<LoadingPage />} />
                 <Route path="/question" element={<QuestionPage />} />
-                <Route path="/end" element={<FinalPage />} />
+                <Route path="/end" element={<FinalScorePage />} />
             </Routes>
         </div>
     );
