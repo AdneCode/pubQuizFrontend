@@ -12,7 +12,11 @@ export const Scorepage = () => {
       <h1>Player Ranking:</h1>
       <ol>
         {sortedPlayerArray.map((player) => {
-          return <li>{player.name}</li>;
+          return (
+            <li>
+              Name: {player.name} Score: {player.score}
+            </li>
+          );
         })}
       </ol>
     </div>
