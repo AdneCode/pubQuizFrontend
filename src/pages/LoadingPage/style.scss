@@ -1,0 +1,25 @@
+.loading {
+  position: relative;
+  height: calc(100vh - 56px);
+
+  &__wrapper {
+    position: absolute;
+    width: 80%;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__players {
+    display: flex;
+    flex-wrap: wrap;
+
+    .player {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .btn {
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 10%);
+  }
+}
