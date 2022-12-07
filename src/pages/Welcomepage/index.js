@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Stack from 'react-bootstrap/Stack';
 import './styles.scss';
+import { Link } from "react-router-dom";
 
 //Remove on release:
 import { useContext } from 'react';
@@ -21,8 +22,8 @@ export const Welcomepage = () => {
             <Container className="welcome">
                 <Row>
                     <Col className="text-center">
-                        {/* Remove on release: */}
-                        <button onClick={() => testData()}>SERVER</button>
+                        {/* Remove on release: */ }
+                        <button onClick={ () => testData() }>SERVER</button>
                         <h1 className="mb-4">Welcome!</h1>
                         <p className="mb-4">
                             Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -36,13 +37,16 @@ export const Welcomepage = () => {
                             deserunt mollit anim id est laborum.
                         </p>
                         <div className="mb-2 pr-4">
-                            <Stack gap={3} className="col-md-5 mx-auto">
-                                <Button variant="secondary">
-                                    Start a game
-                                </Button>
-                                <Button variant="outline-secondary">
-                                    Join a game
-                                </Button>
+                            <Stack gap={ 3 } className="col-md-5 mx-auto">
+
+                                <Link to="/host">
+                                    <Button variant="secondary">Start a game</Button>
+                                </Link>
+
+                                <Link to="/join">
+                                    <Button variant="secondary">Join a game</Button>
+                                </Link>
+
                             </Stack>
                         </div>
                     </Col>
