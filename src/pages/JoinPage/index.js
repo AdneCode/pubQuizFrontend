@@ -1,14 +1,16 @@
 import { useState, useContext } from "react";
 import { SocketContext } from "../../socket";
+import { ImageSelector } from "../../components";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import "./style.scss";
 
-export const Homepage = () => {
+export const JoinPage = () => {
   const [code, setCode] = useState("");
   const [name, setName] = useState("");
+  const [image, setImage] = useState("");
 
   //In order to retrieve the socket out from the useContext hook, we need to import useContext from react and SocketContext from ../socket
   //Next we retrieve the socket out of the context:
@@ -45,6 +47,7 @@ export const Homepage = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
             ></Form.Control>
+            {/* <ImageSelector setImage={setImage} /> */}
             <button type="submit" className="btn btn-success">
               Join
             </button>
