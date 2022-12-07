@@ -10,7 +10,7 @@ export const Quizpage = () => {
     const dispatch = useDispatch();
     const socket = useContext(SocketContext);
     const room = useSelector(selectRoom);
-    console.log('room', room);
+    // console.log('room', room);
 
     const [completed, setCompleted] = useState(0);
 
@@ -26,18 +26,18 @@ export const Quizpage = () => {
     return (
         <div>
             <h1>Quizpage</h1>
-            <h1>{room.currentQuestion.category}</h1>
-            <h1>{room.currentQuestion.question}</h1>
-            {room.currentQuestion.choices.map((choice, id) => {
+            <h1>{ room.currentQuestion.category }</h1>
+            <h1>{ room.currentQuestion.question }</h1>
+            { room.currentQuestion.choices.map((choice, id) => {
                 return (
-                    <button onClick={() => handleChosenAnswer(choice)} key={id}>
-                        {choice}
+                    <button onClick={ () => handleChosenAnswer(choice) } key={ id }>
+                        { choice }
                     </button>
                 );
-            })}
+            }) }
             <br></br>
             <br></br>
-            <ProgressBar bgColor="#6C4FE0" completed={completed} />
+            <ProgressBar bgColor="#6C4FE0" completed={ completed } />
         </div>
     );
 };
