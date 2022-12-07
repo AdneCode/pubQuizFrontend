@@ -9,7 +9,6 @@ import {
   QuestionPage,
   FinalScorePage,
 } from "./pages";
-import { AppNavbar } from "./components";
 
 import "./App.scss";
 
@@ -51,7 +50,6 @@ function App() {
   }, []);
   return (
     <div>
-      <AppNavbar />
       <Routes>
         <Route path="/" element={<Welcomepage />} />
         <Route path="/join" element={<JoinPage />} />

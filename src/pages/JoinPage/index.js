@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { SocketContext } from "../../socket";
-import { ImageSelector } from "../../components";
+import { ImageSelector, AppNavbar } from "../../components";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -29,31 +29,34 @@ export const JoinPage = () => {
   };
 
   return (
-    <Container className="container-center bg-patterns">
-      <Row>
-        <Col className="join">
-          <h1 className="mb-3">Join a game</h1>
-          <Form onSubmit={handleSubmit}>
-            <Form.Label>Code</Form.Label>
-            <Form.Control
-              type="text"
-              value={code}
-              onChange={(e) => setCode(e.target.value)}
-            ></Form.Control>
-            <Form.Label>Name</Form.Label>
-            <Form.Control
-              placeholder="Enter your name"
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            ></Form.Control>
-            {/* <ImageSelector setImage={setImage} /> */}
-            <button type="submit" className="btn btn-success">
-              Join
-            </button>
-          </Form>
-        </Col>
-      </Row>
-    </Container>
+    <>
+      <AppNavbar />
+      <Container className="container-center bg-patterns">
+        <Row>
+          <Col className="join">
+            <h1 className="mb-3">Join a game</h1>
+            <Form onSubmit={handleSubmit}>
+              <Form.Label>Code</Form.Label>
+              <Form.Control
+                type="text"
+                value={code}
+                onChange={(e) => setCode(e.target.value)}
+              ></Form.Control>
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                placeholder="Enter your name"
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              ></Form.Control>
+              {/* <ImageSelector setImage={setImage} /> */}
+              <button type="submit" className="btn btn-success">
+                Join
+              </button>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 };
