@@ -44,6 +44,8 @@ function App() {
                 case 'endGame':
                     navigate('/end');
                     break;
+                default:
+                    console.log("something went wrong");
             }
         });
     }, []);
