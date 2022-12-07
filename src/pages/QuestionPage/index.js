@@ -56,21 +56,22 @@ export const QuestionPage = () => {
     };
     return (
         <div>
-            { !questions
+            {/* <button onClick={ () => dispatch(getQuestions(10, "music", "easy")) }> quiz</button> */ }
+            {/* { !questions
                 ? <LoadingPage />
-                :
-                <div>
-                    <h3>{ questions[questionIndex].question }</h3>
-                    { answerOptions.map((answer, id) => {
-                        return (
-                            <button onClick={ handleChosenAnswer } key={ id }>{ answer }</button>
-                        );
-                    }) }
-                    <br />
-                    <br />
-                    <Scorepage />
-                </div>
-            }
+                : */}
+            <div>
+                <h3>{ questions[questionIndex].question }</h3>
+                { answerOptions.map((answer, id) => {
+                    return (
+                        <button onClick={ handleChosenAnswer } key={ id }>{ answer }</button>
+                    );
+                }) }
+                <br />
+                <br />
+                <Scorepage />
+            </div>
+            {/* } */ }
 
         </div>
     );
