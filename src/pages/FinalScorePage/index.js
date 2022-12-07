@@ -26,9 +26,11 @@ export const FinalScorePage = () => {
     <div>
       <h1>Final Scores:</h1>
       <ol>
+
         { sortedPlayerArray.map((player) => {
           return <li>{ player.name } scored: { player.score }</li>;
         }) }
+
       </ol>
 
       <button onClick={ startNewGame }>Start a new Game</button>

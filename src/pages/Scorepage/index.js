@@ -14,6 +14,7 @@ export const Scorepage = () => {
         { sortedPlayerArray.map((player) => {
           return <li>{ player.name } score: { player.score }</li>;
         }) }
+
       </ol>
     </div>
   );
