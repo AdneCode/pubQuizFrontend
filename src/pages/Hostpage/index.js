@@ -2,6 +2,7 @@ import { useState, useContext } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { getQuestions } from '../../store/Room/thunks';
+import { ImageSelector } from '../../components';
 import Form from 'react-bootstrap/Form';
 import { SocketContext } from '../../socket';
 import axios from 'axios';
@@ -13,6 +14,8 @@ export const Hostpage = () => {
     const [selectedDifficulty, setSelectedDifficulty] = useState('');
     const [selectedNumQuestions, setSelectedNumQuestion] = useState('');
     const [hostName, setHostName] = useState('');
+    const [image, setImage] = useState('');
+    console.log(image);
 
     const submitGameSettings = async (e) => {
         e.preventDefault();
@@ -25,26 +28,31 @@ export const Hostpage = () => {
 
         //for more guidance on socket.emit, see the homepage.
         //emit to create a new room
-        const data = { name: hostName, questions: response.data };
+        const data = {
+            name: hostName,
+            questions: response.data,
+            imageUrl: image,
+        };
         socket.emit('createRoom', data);
     };
 
     return (
         <div>
             <h1>Hostpage</h1>
-            <Form onSubmit={ submitGameSettings }>
-                {/* Host name section (guys I don't know wtf the Form.Label thing is but Form.Input was not a thing, im so sorry)*/ }
+            <Form onSubmit={submitGameSettings}>
+                {/* Host name section (guys I don't know wtf the Form.Label thing is but Form.Input was not a thing, im so sorry)*/}
                 <Form.Label>Name</Form.Label>
                 <input
-                    value={ hostName }
-                    onChange={ (e) => setHostName(e.target.value) }
+                    value={hostName}
+                    onChange={(e) => setHostName(e.target.value)}
                     placeholder="enter your name"
                 />
-                {/* End host name section */ }
+                {/* End host name section */}
+                <ImageSelector setImage={setImage} />
                 <Form.Label>select category</Form.Label>
                 <Form.Select
                     aria-label="Default select example"
-                    onChange={ (e) => setSelectedCategory(e.target.value) }
+                    onChange={(e) => setSelectedCategory(e.target.value)}
                 >
                     <option>-</option>
                     <option value="arts_and_literature">
@@ -65,7 +73,7 @@ export const Hostpage = () => {
                 <br />
                 <Form.Label>select difficulty</Form.Label>
                 <Form.Select
-                    onChange={ (e) => setSelectedDifficulty(e.target.value) }
+                    onChange={(e) => setSelectedDifficulty(e.target.value)}
                     aria-label="Default select example"
                 >
                     <option>-</option>
@@ -76,7 +84,7 @@ export const Hostpage = () => {
                 <br />
                 <Form.Label>select amount of questions</Form.Label>
                 <Form.Select
-                    onChange={ (e) => setSelectedNumQuestion(e.target.value) }
+                    onChange={(e) => setSelectedNumQuestion(e.target.value)}
                     aria-label="Default select example"
                 >
                     <option>-</option>
