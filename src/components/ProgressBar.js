@@ -4,9 +4,8 @@ export const ProgressBar = (props) => {
   const containerStyles = {
     height: 20,
     width: "100%",
-    backgroundColor: "#E7E5F1",
+    backgroundColor: "rgb(239 239 239)",
     borderRadius: 50,
-    margin: 50,
   };
 
   const fillerStyles = {
