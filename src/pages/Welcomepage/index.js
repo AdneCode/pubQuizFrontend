@@ -21,8 +21,8 @@ export const Welcomepage = () => {
   return (
     <>
       <AppNavbar />
-      <div className="bg-patterns">
-        <Container className="welcome container-center">
+      <div>
+        <Container className="welcome container-center bg-patterns">
           <Row>
             <Col className="text-center">
               {/* Remove on release: */}
