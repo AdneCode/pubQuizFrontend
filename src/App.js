@@ -7,6 +7,7 @@ import {
     Scorepage,
     LoadingPage,
     QuestionPage,
+    FinalPage,
 } from './pages';
 import { AppNavbar } from './components';
 
@@ -40,6 +41,9 @@ function App() {
                 case 'score':
                     navigate('/score');
                     break;
+                case 'endGame':
+                    navigate('/end');
+                    break;
             }
         });
     }, []);
@@ -54,6 +58,7 @@ function App() {
                 <Route path="/score" element={<Scorepage />} />
                 <Route path="/loading" element={<LoadingPage />} />
                 <Route path="/question" element={<QuestionPage />} />
+                <Route path="/end" element={<FinalPage />} />
             </Routes>
         </div>
     );
