@@ -31,7 +31,7 @@ export const LoadingPage = () => {
             <h1>join with code: { room.roomId }</h1>
             { room.players.map(player => {
                 return (
-                    <p>{ player.name }</p>
+                    <p>{ player.name } joined the game</p>
                 );
             }) }
         </div>

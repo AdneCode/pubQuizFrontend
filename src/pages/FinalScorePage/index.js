@@ -10,7 +10,7 @@ export const FinalScorePage = () => {
 
   const room = useSelector(selectRoom);
   const playerArray = room?.players;
-  const sortedPlayerArray = playerArray.sort((a, b) => b.score - a.score);
+  const sortedPlayerArray = [...playerArray].sort((a, b) => b.score - a.score);
   console.log("playerArrayFinal", playerArray);
 
   const startNewGame = () => {
@@ -26,17 +26,15 @@ export const FinalScorePage = () => {
     <div>
       <h1>Final Scores:</h1>
       <ol>
-        {sortedPlayerArray.map((player) => {
-          return (
-            <li>
-              Name: {player.name} Score: {player.score}
-            </li>
-          );
-        })}
+
+        { sortedPlayerArray.map((player) => {
+          return <li>{ player.name } scored: { player.score }</li>;
+        }) }
+
       </ol>
 
-      <button onClick={startNewGame}>Start a new Game</button>
-      <button onClick={endGame}>Exit</button>
+      <button onClick={ startNewGame }>Start a new Game</button>
+      <button onClick={ endGame }>Exit</button>
     </div>
   );
 };

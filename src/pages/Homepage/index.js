@@ -9,8 +9,8 @@ export const Homepage = () => {
     //Next we retrieve the socket out of the context:
     const socket = useContext(SocketContext);
 
-    const handleSubmit = () => {
-
+    const handleSubmit = (e) => {
+        e.preventDefault();
         const data = { code, name };
         //Connect to socket.io
         //Socket.emit is sending a message to the server. If socket.emit is used in the backend, the server is sending something to the client.
