@@ -1,6 +1,29 @@
+.bg-patterns {
+  background-image: url(../../assets/patterns.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #f8f9fa;
+}
+
 .welcome {
   height: calc(100vh - 56px);
   display: flex;
   align-items: center;
-  padding: 0 6rem;
+  padding: 0 10rem;
+
+  h1 {
+    font-size: 4rem;
+    font-family: "Heming";
+    font-weight: 700;
+  }
+
+  p {
+    font-family: "Heming";
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    min-width: 200px;
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 10%);
+  }
 }
