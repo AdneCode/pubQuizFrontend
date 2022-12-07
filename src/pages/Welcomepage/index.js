@@ -19,7 +19,7 @@ export const Welcomepage = () => {
   //end of remove on release, there is still the button
   return (
     <div className="bg-patterns">
-      <Container className="welcome">
+      <Container className="welcome container-center">
         <Row>
           <Col className="text-center">
             {/* Remove on release: */}

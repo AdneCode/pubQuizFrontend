@@ -1,0 +1,28 @@
+.host,
+.join {
+  background: transparent;
+  padding: 4rem;
+  border-radius: 20px;
+  border: 2px solid black;
+  box-shadow: 5px 5px 10px rgb(0 0 0 / 10%);
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+
+    input,
+    select {
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      margin-top: 1rem;
+      box-shadow: 5px 5px 10px rgb(0 0 0 / 10%);
+    }
+  }
+}

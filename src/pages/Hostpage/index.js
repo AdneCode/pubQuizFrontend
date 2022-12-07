@@ -1,9 +1,8 @@
-
 import { useState, useContext } from "react";
 import Select from "react-select";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { ImageSelector } from '../../components';
+import { ImageSelector } from "../../components";
 import { getQuestions } from "../../store/Room/thunks";
 import Form from "react-bootstrap/Form";
 import { SocketContext } from "../../socket";
@@ -16,14 +15,13 @@ export const Hostpage = () => {
   const [selectedDifficulty, setSelectedDifficulty] = useState("");
   const [selectedNumQuestions, setSelectedNumQuestion] = useState("");
   const [hostName, setHostName] = useState("");
-  const [image, setImage] = useState('');
+  const [image, setImage] = useState("");
   console.log(image);
 
   const categoryValues = selectedCategory?.map((cat) => {
     return cat.value;
   });
   const categoryString = categoryValues.join();
-
 
   const submitGameSettings = async (e) => {
     e.preventDefault();
@@ -32,7 +30,6 @@ export const Hostpage = () => {
     // );
     const response = await axios.get(
       `https://the-trivia-api.com/api/questions?categories=${categoryString}&limit=${selectedNumQuestions}&region=NL&difficulty=${selectedDifficulty}`
-
     );
 
     //for more guidance on socket.emit, see the homepage.
