@@ -9,8 +9,8 @@ export const Homepage = () => {
     //Next we retrieve the socket out of the context:
     const socket = useContext(SocketContext);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = () => {
+
         const data = { code, name };
         //Connect to socket.io
         //Socket.emit is sending a message to the server. If socket.emit is used in the backend, the server is sending something to the client.
@@ -23,21 +23,21 @@ export const Homepage = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={ handleSubmit }>
                 <input
                     placeholder="Code"
                     type="text"
-                    value={code}
-                    onChange={(e) => setCode(e.target.value)}
+                    value={ code }
+                    onChange={ (e) => setCode(e.target.value) }
                 ></input>
                 <br></br>
                 <input
                     placeholder="Name"
                     type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    value={ name }
+                    onChange={ (e) => setName(e.target.value) }
                 ></input>
-                <button onClick={() => handleSubmit()}>Join</button>
+                <button type="submit">Join</button>
             </form>
         </div>
     );

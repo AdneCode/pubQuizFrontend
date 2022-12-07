@@ -51,14 +51,14 @@ function App() {
         <div>
             <AppNavbar />
             <Routes>
-                <Route path="/" element={<Welcomepage />} />
-                <Route path="/start" element={<Homepage />} />
-                <Route path="/host" element={<Hostpage />} />
-                <Route path="/quiz" element={<Quizpage />} />
-                <Route path="/score" element={<Scorepage />} />
-                <Route path="/loading" element={<LoadingPage />} />
-                <Route path="/question" element={<QuestionPage />} />
-                <Route path="/end" element={<FinalScorePage />} />
+                <Route path="/" element={ <Welcomepage /> } />
+                <Route path="/join" element={ <Homepage /> } />
+                <Route path="/host" element={ <Hostpage /> } />
+                <Route path="/quiz" element={ <Quizpage /> } />
+                <Route path="/score" element={ <Scorepage /> } />
+                <Route path="/loading" element={ <LoadingPage /> } />
+                <Route path="/question" element={ <QuestionPage /> } />
+                <Route path="/end" element={ <FinalScorePage /> } />
             </Routes>
         </div>
     );
