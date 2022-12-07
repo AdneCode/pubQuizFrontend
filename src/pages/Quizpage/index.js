@@ -11,10 +11,10 @@ import Col from "react-bootstrap/Col";
 import "./style.scss";
 
 export const Quizpage = () => {
-    const dispatch = useDispatch();
-    const socket = useContext(SocketContext);
-    const room = useSelector(selectRoom);
-    // console.log('room', room);
+  const dispatch = useDispatch();
+  const socket = useContext(SocketContext);
+  const room = useSelector(selectRoom);
+  // console.log('room', room);
 
   const [completed, setCompleted] = useState(0);
 

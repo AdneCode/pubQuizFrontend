@@ -5,6 +5,10 @@ import { selectRoom } from "../../store/Room/selectors";
 import { useSelector } from "react-redux";
 import "./styles.scss";
 import WinnerAnimation from "../../components/Winner";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
 
 export const FinalScorePage = () => {
   const dispatch = useDispatch();
@@ -25,20 +29,40 @@ export const FinalScorePage = () => {
     navigate("/"); // change to bye page
   };
 
-
-
   return (
-    <div>
-      <h1 className="finalScoreTitle">Final Scores</h1>
-      <WinnerAnimation />
-      <h1 className="congratulationsTitle">Congratulations: { sortedPlayerArray[0].name }!</h1>
-      { sortedPlayerArray.map((player) => {
-        return <p className="finalScore">{ player.name } scored: { player.score }</p>;
-      }) }
-      <div className="finalScoreButtonContainer">
-        <button className="finalScoreButton" onClick={ startNewGame }>Start a new Game</button>
-        <button className="finalScoreButton" onClick={ endGame }>Exit</button>
-      </div>
-    </div>
+    <Container className="container-center">
+      <Row>
+        <Col className="wrapper">
+          <h1 className="finalScoreTitle">Final Scores</h1>
+          <WinnerAnimation />
+          <h1 className="congratulationsTitle">
+            Congratulations: {sortedPlayerArray[0].name}!
+          </h1>
+          {sortedPlayerArray.map((player) => {
+            return (
+              <p className="finalScore">
+                {player.name} scored: {player.score}
+              </p>
+            );
+          })}
+          <div className="finalScoreButtonContainer">
+            <Button
+              variant="success"
+              className="finalScoreButton"
+              onClick={startNewGame}
+            >
+              Start a new Game
+            </Button>
+            <Button
+              className="finalScoreButton"
+              variant="outline-danger"
+              onClick={endGame}
+            >
+              Exit
+            </Button>
+          </div>
+        </Col>
+      </Row>
+    </Container>
   );
 };

@@ -1,8 +1,13 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .finalScoreTitle {
   text-align: center;
-  text-decoration: underline;
   font-weight: 800;
-  margin: 50px 0;
+  border-bottom: 3px solid #000;
 }
 
 .finalScore {
@@ -16,10 +21,12 @@
 }
 
 .finalScoreButtonContainer {
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
 }
 
 .congratulationsTitle {
+  margin-top: 1rem;
   text-align: center;
 }
