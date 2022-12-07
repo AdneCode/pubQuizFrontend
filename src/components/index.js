@@ -1,3 +1,3 @@
 export * from './Navbar';
-export * from './ImageSelector2';
+export * from './ImageSelector';
 export * from './images';
