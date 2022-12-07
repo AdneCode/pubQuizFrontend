@@ -1,9 +1,11 @@
 import { useState, useContext } from 'react';
 import { SocketContext } from '../../socket';
+import { ImageSelector } from '../../components';
 
 export const Homepage = () => {
     const [code, setCode] = useState('');
     const [name, setName] = useState('');
+    const [image, setImage] = useState('');
 
     //In order to retrieve the socket out from the useContext hook, we need to import useContext from react and SocketContext from ../socket
     //Next we retrieve the socket out of the context:
@@ -11,7 +13,7 @@ export const Homepage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = { code, name };
+        const data = { code, name, imageUrl: image };
         //Connect to socket.io
         //Socket.emit is sending a message to the server. If socket.emit is used in the backend, the server is sending something to the client.
         //We declare 'joinRoom' to the socket.emit method. In the backend, socket.on('joinRoom') is declared, the string needs to be identical
@@ -23,20 +25,22 @@ export const Homepage = () => {
 
     return (
         <div>
-            <form onSubmit={ handleSubmit }>
+            <form onSubmit={handleSubmit}>
                 <input
                     placeholder="Code"
                     type="text"
-                    value={ code }
-                    onChange={ (e) => setCode(e.target.value) }
+                    value={code}
+                    onChange={(e) => setCode(e.target.value)}
                 ></input>
                 <br></br>
                 <input
                     placeholder="Name"
                     type="text"
-                    value={ name }
-                    onChange={ (e) => setName(e.target.value) }
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                 ></input>
+
+                <ImageSelector setImage={setImage} />
                 <button type="submit">Join</button>
             </form>
         </div>
