@@ -24,8 +24,8 @@ export const LoadingPage = () => {
     };
     return (
         <div>
-            <Lottie options={defaultOptions} />
-            <button onClick={startGame}>Start quiz</button>
+            <Lottie options={ defaultOptions } />
+            <button onClick={ startGame }>Start quiz</button>
         </div>
     );
 };
