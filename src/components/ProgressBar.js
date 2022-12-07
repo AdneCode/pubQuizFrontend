@@ -1,6 +1,6 @@
 export const ProgressBar = (props) => {
   const { bgColor, completed } = props;
-  console.log("color", bgColor, "completed", completed);
+  // console.log("color", bgColor, "completed", completed);
   const containerStyles = {
     height: 20,
     width: "100%",
@@ -23,9 +23,9 @@ export const ProgressBar = (props) => {
   };
 
   return (
-    <div style={containerStyles}>
-      <div style={fillerStyles}>
-        <span style={labelStyles}></span>
+    <div style={ containerStyles }>
+      <div style={ fillerStyles }>
+        <span style={ labelStyles }></span>
       </div>
     </div>
   );
