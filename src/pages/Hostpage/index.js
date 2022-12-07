@@ -32,20 +32,21 @@ export const Hostpage = () => {
     return (
         <div>
             <h1>Hostpage</h1>
-            <Form onSubmit={submitGameSettings}>
-                {/* Host name section (guys I don't know wtf the Form.Label thing is but Form.Input was not a thing, im so sorry)*/}
+            <Form onSubmit={ submitGameSettings }>
+                {/* Host name section (guys I don't know wtf the Form.Label thing is but Form.Input was not a thing, im so sorry)*/ }
                 <Form.Label>Name</Form.Label>
                 <input
-                    value={hostName}
-                    onChange={(e) => setHostName(e.target.value)}
+                    value={ hostName }
+                    onChange={ (e) => setHostName(e.target.value) }
+                    placeholder="enter your name"
                 />
-                {/* End host name section */}
+                {/* End host name section */ }
                 <Form.Label>select category</Form.Label>
                 <Form.Select
                     aria-label="Default select example"
-                    onChange={(e) => setSelectedCategory(e.target.value)}
+                    onChange={ (e) => setSelectedCategory(e.target.value) }
                 >
-                    <option>Open this select menu</option>
+                    <option>-</option>
                     <option value="arts_and_literature">
                         Arts & Literature
                     </option>
@@ -64,10 +65,10 @@ export const Hostpage = () => {
                 <br />
                 <Form.Label>select difficulty</Form.Label>
                 <Form.Select
-                    onChange={(e) => setSelectedDifficulty(e.target.value)}
+                    onChange={ (e) => setSelectedDifficulty(e.target.value) }
                     aria-label="Default select example"
                 >
-                    <option>Open this select menu</option>
+                    <option>-</option>
                     <option value="easy">easy</option>
                     <option value="medium">medium</option>
                     <option value="hard">hard</option>
@@ -75,10 +76,10 @@ export const Hostpage = () => {
                 <br />
                 <Form.Label>select amount of questions</Form.Label>
                 <Form.Select
-                    onChange={(e) => setSelectedNumQuestion(e.target.value)}
+                    onChange={ (e) => setSelectedNumQuestion(e.target.value) }
                     aria-label="Default select example"
                 >
-                    <option>Open this select menu</option>
+                    <option>-</option>
                     <option value="5">5</option>
                     <option value="10">10</option>
                     <option value="15">15</option>

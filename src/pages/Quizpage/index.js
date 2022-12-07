@@ -14,6 +14,7 @@ export const Quizpage = () => {
 
   const [completed, setCompleted] = useState(0);
 
+<<<<<<< HEAD
   useEffect(() => {
     setCompleted(100 - room.timer * 4);
   }, [room.timer]);
@@ -39,4 +40,20 @@ export const Quizpage = () => {
       <ProgressBar bgColor="#6C4FE0" completed={completed} />
     </div>
   );
+=======
+    return (
+        <div>
+            <h1>Quizpage</h1>
+            <h1>{ room.currentQuestion.category }</h1>
+            <h1>{ room.currentQuestion.question }</h1>
+            { room.currentQuestion.choices.map((choice, id) => {
+                return (
+                    <button onClick={ () => handleChosenAnswer(choice) } key={ id }>
+                        { choice }
+                    </button>
+                );
+            }) }
+        </div>
+    );
+>>>>>>> 6d51b86e6fadabed3273d978a2191874497fe93e
 };
