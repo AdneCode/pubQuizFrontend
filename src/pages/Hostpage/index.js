@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import Select from "react-select";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { ImageSelector, AppNavbar } from "../../components";
+import { ImageSelector } from "../../components";
 import { getQuestions } from "../../store/Room/thunks";
 import Form from "react-bootstrap/Form";
 import { SocketContext } from "../../socket";
@@ -61,7 +61,6 @@ export const Hostpage = () => {
 
   return (
     <>
-      <AppNavbar />
       <Container className="container-center bg-patterns container-host">
         <Row>
           <Col className="host">
