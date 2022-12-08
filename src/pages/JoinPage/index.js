@@ -18,7 +18,7 @@ export const JoinPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = { code, name };
+    const data = { code, name, imageUrl: image };
     //Connect to socket.io
     //Socket.emit is sending a message to the server. If socket.emit is used in the backend, the server is sending something to the client.
     //We declare 'joinRoom' to the socket.emit method. In the backend, socket.on('joinRoom') is declared, the string needs to be identical
@@ -49,7 +49,7 @@ export const JoinPage = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               ></Form.Control>
-              {/* <ImageSelector setImage={setImage} /> */}
+              <ImageSelector setImage={setImage} />
               <button type="submit" className="btn btn-success">
                 Join
               </button>

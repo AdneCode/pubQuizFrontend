@@ -40,9 +40,12 @@ export const FinalScorePage = () => {
           </h1>
           {sortedPlayerArray.map((player) => {
             return (
-              <p className="finalScore">
-                {player.name} scored: {player.score}
-              </p>
+              <div className="finalScore">
+                <img src={player.imageUrl} alt="anything" />
+                <span>
+                  {player.name} scored: {player.score}
+                </span>
+              </div>
             );
           })}
           <div className="finalScoreButtonContainer">

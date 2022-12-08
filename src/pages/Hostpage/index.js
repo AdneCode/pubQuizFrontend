@@ -20,7 +20,7 @@ export const Hostpage = () => {
   const [selectedNumQuestions, setSelectedNumQuestion] = useState("");
   const [hostName, setHostName] = useState("");
   const [image, setImage] = useState("");
-  console.log(image);
+  console.log("image", image);
 
   const categoryValues = selectedCategory?.map((cat) => {
     return cat.value;
@@ -38,7 +38,7 @@ export const Hostpage = () => {
 
     //for more guidance on socket.emit, see the homepage.
     //emit to create a new room
-    const data = { name: hostName, questions: response.data };
+    const data = { name: hostName, imageUrl: image, questions: response.data };
     socket.emit("createRoom", data);
   };
 
@@ -75,9 +75,7 @@ export const Hostpage = () => {
                 placeholder="Enter your name"
               ></Form.Control>
               {/* End host name section */}
-              <Form.Label>Choose Avatar</Form.Label>
               <ImageSelector setImage={setImage} />
-
               <Form.Label>Category</Form.Label>
               <Select
                 className="select-cat"
