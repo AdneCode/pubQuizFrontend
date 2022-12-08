@@ -6,7 +6,9 @@ const ImageBox = (p) => {
   const { image, setImage } = p;
   return (
     <div onClick={() => setImage(image)}>
-      <img src={`${image}`} style={{ height: "40px", width: "40px" }} />
+      <button>
+        <img src={`${image}`} style={{ height: "40px", width: "40px" }} />
+      </button>
     </div>
   );
 };
