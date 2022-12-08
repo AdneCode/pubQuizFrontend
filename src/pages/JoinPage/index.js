@@ -30,7 +30,6 @@ export const JoinPage = () => {
 
   return (
     <>
-      <AppNavbar />
       <Container className="container-center bg-patterns">
         <Row>
           <Col className="join">
