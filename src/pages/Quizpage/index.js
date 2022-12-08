@@ -19,7 +19,7 @@ export const Quizpage = () => {
   const [completed, setCompleted] = useState(0);
 
   useEffect(() => {
-    setCompleted(100 - room.timer * 4);
+    setCompleted(100 - room.timer * 10);
   }, [room.timer]);
 
   const handleChosenAnswer = (choice) => {
@@ -31,21 +31,21 @@ export const Quizpage = () => {
     <Container className="container-center quiz bg-patterns">
       <Row>
         <Col>
-          <ProgressBar bgColor="rgb(224, 79, 79)" completed={completed} />
-          <h1 className="category">{room.currentQuestion.category}</h1>
-          <h2 className="question">{room.currentQuestion.question}</h2>
+          <ProgressBar bgColor="rgb(224, 79, 79)" completed={ completed } />
+          <h1 className="category">{ room.currentQuestion.category }</h1>
+          <h2 className="question">{ room.currentQuestion.question }</h2>
           <div className="choices">
-            {room.currentQuestion.choices.map((choice, id) => {
+            { room.currentQuestion.choices.map((choice, id) => {
               return (
                 <button
-                  onClick={() => handleChosenAnswer(choice)}
-                  key={id}
+                  onClick={ () => handleChosenAnswer(choice) }
+                  key={ id }
                   className="btn-choices"
                 >
-                  {choice}
+                  { choice }
                 </button>
               );
-            })}
+            }) }
           </div>
         </Col>
       </Row>
