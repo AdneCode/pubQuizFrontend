@@ -75,7 +75,6 @@ export const Hostpage = () => {
                 placeholder="Enter your name"
               ></Form.Control>
               {/* End host name section */}
-              <ImageSelector setImage={setImage} />
               <Form.Label>Category</Form.Label>
               <Select
                 className="select-cat"
@@ -107,6 +106,8 @@ export const Hostpage = () => {
                 <option value="20">20</option>
                 <option value="25">25</option>
               </Form.Select>
+              <Form.Label>Choose avatar</Form.Label>
+              <ImageSelector setImage={setImage} />
               <button type="submit" className="btn btn-success">
                 Create Game
               </button>

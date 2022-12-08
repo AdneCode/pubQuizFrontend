@@ -41,7 +41,6 @@ export const FinalScorePage = () => {
           {sortedPlayerArray.map((player) => {
             return (
               <div className="finalScore">
-                <img src={player.imageUrl} alt="anything" />
                 <span>
                   {player.name} scored: {player.score}
                 </span>
