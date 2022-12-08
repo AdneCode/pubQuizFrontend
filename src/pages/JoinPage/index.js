@@ -49,6 +49,9 @@ export const JoinPage = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               ></Form.Control>
+
+              <Form.Label>Choose avatar</Form.Label>
+
               <ImageSelector setImage={setImage} />
               <button type="submit" className="btn btn-success">
                 Join
