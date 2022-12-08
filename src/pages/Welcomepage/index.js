@@ -25,19 +25,17 @@ export const Welcomepage = () => {
         <Container className="welcome container-center bg-patterns">
           <Row>
             <Col className="text-center">
-              {/* Remove on release: */}
-              {/* <button onClick={() => testData()}>SERVER</button> */}
+              {/* Remove on release: */ }
+              {/* <button onClick={() => testData()}>SERVER</button> */ }
               <h1 className="mb-4">Build your quiz!</h1>
               <p className="mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur.
+                Welcome to Quest Mongers 62! Play by yourself or with your friends.
+                <br />
+                <br />
+                If you want to start a game with your friends, select "start a game" and send the generated code to your friends. Your friends can then join your game with the code!
               </p>
               <div className="mb-2 pr-4">
-                <Stack gap={3} className="col-md-5 mx-auto">
+                <Stack gap={ 3 } className="col-md-5 mx-auto">
                   <Link to="/host">
                     <Button variant="success" className="btn">
                       Start a game
