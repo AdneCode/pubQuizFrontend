@@ -19,6 +19,7 @@ export const Quizpage = () => {
   const [completed, setCompleted] = useState(0);
 
   useEffect(() => {
+
     setCompleted(100 - room.timer * 10);
   }, [room.timer]);
 
