@@ -31,3 +31,13 @@ a {
   background-repeat: no-repeat;
   background-color: #f8f9fa;
 }
+
+.avatar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+
+  img {
+    object-fit: cover;
+  }
+}

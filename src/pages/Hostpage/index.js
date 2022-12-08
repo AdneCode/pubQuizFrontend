@@ -75,7 +75,9 @@ export const Hostpage = () => {
                 placeholder="Enter your name"
               ></Form.Control>
               {/* End host name section */}
-              {/* <ImageSelector setImage={setImage} /> */}
+              <Form.Label>Choose Avatar</Form.Label>
+              <ImageSelector setImage={setImage} />
+
               <Form.Label>Category</Form.Label>
               <Select
                 className="select-cat"
