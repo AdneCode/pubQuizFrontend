@@ -62,7 +62,7 @@ export const Hostpage = () => {
   return (
     <>
       <AppNavbar />
-      <Container className="container-center bg-patterns">
+      <Container className="container-center bg-patterns container-host">
         <Row>
           <Col className="host">
             <h1>Create a game</h1>
