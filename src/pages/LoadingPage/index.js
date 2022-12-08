@@ -35,7 +35,12 @@ export const LoadingPage = () => {
         <p>Current players:</p>
         <div className="loading__players">
           {room.players.map((player) => {
-            return <p className="player">{player.name}</p>;
+            return (
+              <div style={{ display: "flex" }}>
+                <img src={player.imageUrl} alt="anything" />
+                <span className="player">{player.name}</span>
+              </div>
+            );
           })}
         </div>
         <button onClick={startGame} className="btn btn-success">

@@ -24,7 +24,8 @@ export const Scorepage = () => {
 
           {sortedPlayerArray.map((player) => {
             return (
-              <p className="scoreList">
+              <div className="scoreList">
+                <img src={player.imageUrl} alt="anything" />
                 <span> {player.name} answered: </span>
                 {previousAnswer === player.previousAnswer ? (
                   <span className="rightAnswer">{player.previousAnswer}</span>
@@ -32,7 +33,7 @@ export const Scorepage = () => {
                   <span className="wrongAnswer">{player.previousAnswer}</span>
                 )}{" "}
                 <span>current score:{<strong> {player.score}</strong>}</span>
-              </p>
+              </div>
             );
           })}
         </Col>
